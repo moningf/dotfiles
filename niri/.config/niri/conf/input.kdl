@@ -1,0 +1,33 @@
+// Input device configuration.
+input {
+    keyboard {
+        xkb {}
+        numlock
+    }
+
+    touchpad {
+        // off
+        tap //轻触点击
+        // dwt //输入时禁止
+        // dwtp //跟踪点时禁止
+        // drag false //false表示禁止点击或拖动
+        // drag-lock  //表示拖动过程中不会丢失进度
+        natural-scroll // 反方向移动
+        accel-speed 0.2 //指针速度,默认是0
+        // accel-profile "flat"
+        // scroll-method "two-finger"
+        // disabled-on-external-mouse
+    }
+
+    mouse {
+        // off
+        // natural-scroll
+        // accel-speed 0.2
+        // accel-profile "flat"
+        // scroll-method "no-scroll"
+    }
+    // warp-mouse-to-focus //移动焦点时自动转换光标位置
+
+    focus-follows-mouse max-scroll-amount="0%"
+}
+
