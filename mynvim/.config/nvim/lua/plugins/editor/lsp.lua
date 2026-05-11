@@ -6,7 +6,19 @@ return {
         "mason-org/mason-lspconfig.nvim",
         opts = {
           ensure_installed = { "lua_ls", "pyright", "clangd", "bashls", "rust_analyzer" },
-          automatic_enable = true,
+          automatic_enable = true, -- 自动启动lsp
+        },
+      },
+      {
+        "mason-org/mason.nvim",
+        opts = {
+          ui = {
+            icons = {
+              package_installed = "✓",
+              package_pending = "➜",
+              package_uninstalled = "✗"
+            }
+          }
         },
       },
     },
@@ -48,9 +60,5 @@ return {
         end,
       })
     end,
-  },
-  {
-    "mason-org/mason.nvim",
-    opts = {},
   },
 }
