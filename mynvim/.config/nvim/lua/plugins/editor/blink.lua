@@ -18,13 +18,16 @@ return {
     -- C-k: Toggle signature help (if signature.enabled = true)
     --
     -- See :h blink-cmp-config-keymap for defining your own keymap
-    keymap = { preset = 'super-tab' },
+    keymap = {
+      preset = 'super-tab',
+      ['<C-e>'] = { 'show_documentation', 'hide' },
+    },
 
     appearance = {
       nerd_font_variant = 'mono'
     },
 
-    completion = { documentation = { auto_show = false } },
+    completion = { documentation = { auto_show = true } },
 
     sources = {
       default = { 'lsp', 'path', 'snippets', 'buffer' },

@@ -6,7 +6,7 @@ return {
         "mason-org/mason-lspconfig.nvim",
         opts = {
           ensure_installed = { "lua_ls", "pyright", "clangd", "bashls", "rust_analyzer" },
-          automatic_enable = true, -- 自动启动lsp
+          automatic_enable = false, -- 自动启动lsp
         },
       },
       {
@@ -24,8 +24,8 @@ return {
     },
     config = function()
       -- 手动启用你想要的 LSP
-      -- vim.lsp.enable("lua_ls")
-      -- vim.lsp.enable("pyright")
+      vim.lsp.enable("lua_ls")
+      vim.lsp.enable("pyright")
 
       -- 统一 LspAttach 按键
       vim.api.nvim_create_autocmd("LspAttach", {

@@ -17,6 +17,9 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Setup lazy.nvim
 require("lazy").setup({
+  rocks = {
+    hererocks = true, -- leetcode
+  },
   ui = {
     border = "rounded",
   },
@@ -26,6 +29,8 @@ require("lazy").setup({
     { import = "plugins.editor" },
     { import = "plugins.ui" },
     { import = "plugins.utils" },
+    { import = "plugins.mine" },
+    { import = "plugins.language" },
   },
   install = { colorscheme = { "catppuccin-mocha" } },
   checker = { enabled = true, notify = false },
