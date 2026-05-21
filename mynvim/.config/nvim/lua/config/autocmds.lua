@@ -12,7 +12,6 @@ vim.api.nvim_create_autocmd("ColorScheme", {
     vim.api.nvim_set_hl(0, "NvimTreeNormalNC", { link = "NvimTreeNormal" })
   end,
 })
-
 -- 注意：如果你的配置是按模块加载的，为了确保立即生效，
 -- 可以在下方直接先执行一次覆盖：
 vim.api.nvim_set_hl(0, "NormalNC", { link = "Normal" })

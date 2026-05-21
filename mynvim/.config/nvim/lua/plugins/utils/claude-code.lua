@@ -1,29 +1,57 @@
+local toggle_key = "<C-,>"
+
+
+
+-- local fallback_key = "<C-_>"
 return {
-  {
-    "coder/claudecode.nvim",
-    dependencies = { "folke/snacks.nvim" },
-    config = true,
-    keys = {
-      { "<leader>a",  nil,                              desc = "AI/Claude Code" },
-      { "<leader>ac", "<cmd>ClaudeCode<cr>",            mode = { "n", "t" },         desc = "Toggle Claude" },
-      { "<leader>af", "<cmd>ClaudeCodeFocus<cr>",       desc = "Focus Claude" },
-      { "<leader>ar", "<cmd>ClaudeCode --resume<cr>",   desc = "Resume Claude" },
-      { "<leader>aC", "<cmd>ClaudeCode --continue<cr>", desc = "Continue Claude" },
-      { "<leader>am", "<cmd>ClaudeCodeSelectModel<cr>", desc = "Select Claude model" },
-      { "<leader>ab", "<cmd>ClaudeCodeAdd %<cr>",       desc = "Add current buffer" },
-      { "<leader>as", "<cmd>ClaudeCodeSend<cr>",        mode = "v",                  desc = "Send to Claude" },
-      {
-        "<leader>as",
-        "<cmd>ClaudeCodeTreeAdd<cr>",
-        desc = "Add file",
-        ft = { "NvimTree", "neo-tree", "oil", "minifiles", "netrw" },
+  "coder/claudecode.nvim",
+  dependencies = {
+    "folke/snacks.nvim",
+  },
+  opts = {
+    -- diff_opts = {
+    --   layout = "vertical",
+    --   open_in_new_tab = false,
+    --   keep_terminal_focus = false,
+    --   hide_terminal_in_new_tab = false,
+    -- },
+
+    terminal = {
+      provider = "snacks",
+
+
+      snacks_win_opts = {
+        position = "float",
+        width = 0.8,
+        height = 0.8,
+        border = "rounded",
+        keys = {
+          -- 直接引用顶部定义的变量
+          claude_hide = {
+            toggle_key,
+            function(self) self:hide() end,
+            mode = "t",
+            desc = "Hide Claude",
+          },
+          -- claude_hide_fallback = {
+          --   fallback_key,
+          --   function(self) self:hide() end,
+          --   mode = "t",
+          --   desc = "Hide Claude",
+          -- },
+        },
       },
-      -- Diff management
-      { "<leader>aa", "<cmd>ClaudeCodeDiffAccept<cr>", desc = "Accept diff" },
-      { "<leader>ad", "<cmd>ClaudeCodeDiffDeny<cr>",   desc = "Deny diff" },
     },
-    -- init = function()
-    --   vim.keymap.set("t", "<A-e>", "<C-\\><C-n><C-w>h", { desc = "Exit terminal mode safely" })
-    -- end
-  }
+  },
+
+
+  keys = {
+    -- 引用变量，配置普通模式和可视模式的唤醒
+    { toggle_key,   "<cmd>ClaudeCodeFocus<cr>", mode = { "n", "x" },  desc = "Toggle Claude Code" },
+    -- { fallback_key, "<cmd>ClaudeCodeFocus<cr>", mode = { "n", "x" },  desc = "Toggle Claude Code" },
+
+    -- 保留官方推荐的备用快捷键
+    { "<leader>ac", "<cmd>ClaudeCode<cr>",      desc = "Claude Code" },
+    { "<leader>af", "<cmd>ClaudeCodeFocus<cr>", desc = "Focus Claude" },
+  },
 }
