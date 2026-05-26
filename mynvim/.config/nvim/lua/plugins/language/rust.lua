@@ -25,6 +25,14 @@ return {
 
             -- rename
             map("n", "<leader>rn", vim.lsp.buf.rename, { buffer = bufnr })
+            -- inlay_hint
+            map('n', '<leader>th', function()
+              if vim.lsp.inlay_hint then
+                local is_enabled = vim.lsp.inlay_hint.is_enabled()
+                vim.lsp.inlay_hint.enable(not is_enabled)
+                print("Inlay Hints: " .. (is_enabled and "OFF" or "ON"))
+              end
+            end, { desc = "Toggle Inlay Hints" })
           end,
 
           settings = {
