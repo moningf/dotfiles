@@ -26,6 +26,8 @@ return {
       -- 手动启用你想要的 LSP
       vim.lsp.enable("lua_ls")
       vim.lsp.enable("pyright")
+      vim.lsp.enable("clangd")
+      vim.lsp.enable("bashls")
 
       -- 统一 LspAttach 按键
       vim.api.nvim_create_autocmd("LspAttach", {
