@@ -1,0 +1,97 @@
+{
+  "wallpapersFolder": "~/.local/share/Steam/steamapps/workshop/content/431960",
+  "iconColor": "none",
+  "enableExtraPropertiesEditor": true,
+  "defaultScaling": "fill",
+  "defaultClamp": "clamp",
+  "defaultFps": 30,
+  "defaultVolume": 100,
+  "defaultMuted": true,
+  "defaultAudioReactiveEffects": true,
+  "defaultNoAutomute": false,
+  "defaultDisableMouse": false,
+  "defaultDisableParallax": false,
+  "applyWallpaperColorsOnApply": false,
+  "wallpaperColorScreenshots": {},
+  "defaultNoFullscreenPause": false,
+  "defaultFullscreenPauseOnlyActive": false,
+  "showSidebarDescription": false,
+  "badgeOrder": [
+    "type",
+    "dynamic",
+    "music",
+    "reactive",
+    "approved",
+    "resolution",
+    "compatibility"
+  ],
+  "badgeEnabled": {
+    "type": true,
+    "dynamic": true,
+    "music": true,
+    "reactive": true,
+    "approved": true,
+    "resolution": true,
+    "compatibility": true
+  },
+  "autoApplyOnStartup": true,
+  "panelPageSize": 24,
+  "wallpaperScanCacheMinutes": 5,
+  "panelLastSelectedPath": "",
+  "screens": {
+    "eDP-1": {
+      "path": "/home/moningf/.local/share/Steam/steamapps/workshop/content/431960/2927802976",
+      "scaling": "fill"
+    }
+  },
+  "wallpaperProperties": {
+    "2927802976": {
+      "schemecolor": "228,187,181"
+    },
+    "2954387038": {
+      "backgroundbutterfliesflyinganimation": "1",
+      "backgroundbutterfliesglowing": "1",
+      "backgroundbutterfliesparticles": "1",
+      "backgroundparticles": "1",
+      "blinking": "1",
+      "clothinganimation": "1",
+      "eyesanimation": "1",
+      "foregroundbutterfliesflyinganimation": "1",
+      "foregroundbutterfliesglowing": "1",
+      "foregroundbutterfliesparticles": "1",
+      "foregroundparticles": "1",
+      "ghostanimation": "1",
+      "ghostflight": "1",
+      "grassanimation": "1",
+      "hairanimation": "1",
+      "schemecolor": "0,0,0"
+    },
+    "3027105386": {},
+    "3048035996": {
+      "schemecolor": "48,91,157"
+    },
+    "3175116100": {
+      "schemecolor": "38,115,141"
+    },
+    "3227537235": {
+      "schemecolor": "70,55,42"
+    },
+    "3238047186": {
+      "schemecolor": "252,211,178"
+    },
+    "3319843224": {
+      "schemecolor": "167,222,250"
+    },
+    "3326121126": {
+      "schemecolor": "10,22,34"
+    }
+  },
+  "lastKnownGoodScreens": {
+    "eDP-1": {
+      "path": "/home/moningf/.local/share/Steam/steamapps/workshop/content/431960/2927802976",
+      "scaling": "fill"
+    }
+  },
+  "runtimeRecoveryPending": false,
+  "assetsDir": ""
+}
