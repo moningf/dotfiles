@@ -30,37 +30,37 @@ return {
       vim.lsp.enable("bashls")
 
       -- 统一 LspAttach 按键
-      vim.api.nvim_create_autocmd("LspAttach", {
-        callback = function(event)
-          local map = function(keys, func, desc)
-            vim.keymap.set("n", keys, func, {
-              buffer = event.buf,
-              desc = "LSP: " .. desc,
-            })
-          end
-
-          map("gd", "<cmd>Telescope lsp_definitions<cr>", "Goto Definition")
-          map("gr", "<cmd>Telescope lsp_references<cr>", "References")
-          map("gI", "<cmd>Telescope lsp_implementations<cr>", "Implementation")
-          map("gy", "<cmd>Telescope lsp_type_definitions<cr>", "Type Definition")
-
-          map("K", vim.lsp.buf.hover, "Hover Documentation")
-          map("<leader>rn", vim.lsp.buf.rename, "Rename")
-          map("<leader>ca", vim.lsp.buf.code_action, "Code Action")
-          map("<leader>ds", vim.lsp.buf.document_symbol, "Document Symbols")
-          map("<leader>ws", vim.lsp.buf.workspace_symbol, "Workspace Symbols")
-          vim.diagnostic.config({
-            virtual_text = true,
-            underline = true,
-            signs = true,
-            severity_sort = true,
-            float = {
-              border = "rounded",
-              source = "if_many",
-            },
-          })
-        end,
-      })
+      -- vim.api.nvim_create_autocmd("LspAttach", {
+      --   callback = function(event)
+      --     local map = function(keys, func, desc)
+      --       vim.keymap.set("n", keys, func, {
+      --         buffer = event.buf,
+      --         desc = "LSP: " .. desc,
+      --       })
+      --     end
+      --
+      --     map("gd", "<cmd>Telescope lsp_definitions<cr>", "Goto Definition")
+      --     map("gr", "<cmd>Telescope lsp_references<cr>", "References")
+      --     map("gI", "<cmd>Telescope lsp_implementations<cr>", "Implementation")
+      --     map("gy", "<cmd>Telescope lsp_type_definitions<cr>", "Type Definition")
+      --
+      --     map("K", vim.lsp.buf.hover, "Hover Documentation")
+      --     map("<leader>rn", vim.lsp.buf.rename, "Rename")
+      --     map("<leader>ca", vim.lsp.buf.code_action, "Code Action")
+      --     map("<leader>ds", vim.lsp.buf.document_symbol, "Document Symbols")
+      --     map("<leader>ws", vim.lsp.buf.workspace_symbol, "Workspace Symbols")
+      --     vim.diagnostic.config({
+      --       virtual_text = true,
+      --       underline = true,
+      --       signs = true,
+      --       severity_sort = true,
+      --       float = {
+      --         border = "rounded",
+      --         source = "if_many",
+      --       },
+      --     })
+      --   end,
+      -- })
     end,
   },
 }

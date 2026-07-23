@@ -6,11 +6,15 @@ return {
     opts = {},
   },
   {
-    -- LazyGit集成
-    "kdheepak/lazygit.nvim",
-    cmd = "LazyGit",
-    keys = {
-      { "<leader>gg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
+    "folke/snacks.nvim",
+    ---@type snacks.Config
+    opts = {
+      lazygit = {
+        configure = true, -- 自动配置集成
+      }
     },
+    keys = {
+      { "<leader>gg", function() Snacks.lazygit() end, desc = "Lazygit" },
+    }
   }
 }

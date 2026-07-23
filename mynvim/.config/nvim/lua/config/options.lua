@@ -4,14 +4,13 @@ vim.g.mapleader = " "
 -- 行号
 opt.number = true
 opt.relativenumber = true
-
 -- 缩进与空格 tab & indentation
-opt.tabstop = 2         -- 一个Tab字符占据的宽度
-opt.shiftwidth = 2      --每一级缩进的空格数
-opt.expandtab = true    --将Tab转化为空格
-opt.breakindent = true  -- 折行缩进
--- opt.wrap = false -- 禁止自动包裹
-opt.wrap = true         -- 禁止自动包裹
+opt.tabstop = 2        -- 一个Tab字符占据的宽度
+opt.shiftwidth = 2     --每一级缩进的空格数
+opt.expandtab = true   --将Tab转化为空格
+opt.breakindent = true -- 折行缩进
+opt.wrap = false       -- 禁止自动包裹
+-- opt.wrap = true         -- 禁止自动包裹
 -- 三大缩进算法(使用Tree-sitter处理缩进)
 opt.autoindent = true   -- 自动缩进，当换行时，新一行自动对齐到上一行起始位置
 opt.smartindent = false -- 智能缩进，根据代码语法自动增加下一行的缩进
@@ -24,6 +23,7 @@ opt.smartcase = true    -- 如果使用大小写混用，则不忽略
 opt.termguicolors = true  --支持24位真彩色
 opt.background = "dark"
 opt.cursorline = true     --显示光标行
+-- opt.cursorlineopt = "number" -- 只高亮number，而不是整行
 opt.signcolumn = "yes"    -- 始终显示左侧的标记列，显示git或lsp的错误提示
 opt.winborder = "rounded" -- 窗口边框 "single"
 
@@ -47,6 +47,14 @@ vim.g.loaded_netrwPlugin = 1
 vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99
 vim.opt.foldenable = true
+
+-- 禁止注释自动续行
+-- vim.api.nvim_create_autocmd("FileType", {
+--   pattern = "*",
+--   callback = function()
+--     vim.opt.formatoptions:remove({ "c", "r", "o" })
+--   end
+-- })
 
 -- vim.diagnostic.config({
 --   virtual_text = true,      -- 显示报错/警告文本

@@ -7,6 +7,7 @@ return {
   },
   config = function()
     require("nvim-treesitter").install({
+      "regex",
       "lua",
       "python",
       "rust",

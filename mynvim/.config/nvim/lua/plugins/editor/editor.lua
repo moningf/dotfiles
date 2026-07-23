@@ -8,7 +8,7 @@ return {
 
       lint.linters_by_ft = {
         -- lua = { "luac" },
-        python = { "ruff" },
+        -- python = { "ruff" },
         javascript = { "eslint_d" },
         typescript = { "eslint_d" },
         vue = { "eslint_d" },
